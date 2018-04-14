@@ -1,0 +1,16 @@
+{
+  "name": {
+    "authentication_method": "cleartext",
+    "active": true,
+    "authenticated": true,
+    "roles": [],
+    "password": "1234"
+  },
+  "sam": {
+    "authentication_method": "cleartext",
+    "active": true,
+    "authenticated": true,
+    "roles": [],
+    "password": "1234"
+  }
+}
