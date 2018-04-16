@@ -29,8 +29,8 @@ but found nothing, I just wrote this down. I hope that it might help others ,too
 	* Code Optimizations
 	* Caching
 * Settings via the webinterface
-* Python2 & 3 compatibility.
-
+* ~~Python2 & 3 compatibility.~~ Python3 compatibility only. 
+* Change from base theme from Bootstrap3 to Bootstrap4. 
 
 ## Setup
 You can install wiki using:
