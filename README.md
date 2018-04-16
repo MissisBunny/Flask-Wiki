@@ -31,6 +31,7 @@ but found nothing, I just wrote this down. I hope that it might help others ,too
 * Settings via the webinterface
 * ~~Python2 & 3 compatibility.~~ Python3 compatibility only. 
 * Change from base theme from Bootstrap3 to Bootstrap4. 
+* Improved  embed marcdown editor
 
 ## Setup
 You can install wiki using:
