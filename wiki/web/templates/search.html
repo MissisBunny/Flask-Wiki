@@ -2,9 +2,9 @@
 
 {% block title %}
 {% if search %}
-	Results for "{{ search }}"
+	Результаты для "{{ search }}"
 {% else %}
-	Search
+	 Поиск
 {% endif %}
 {% endblock title %}
 
@@ -13,9 +13,9 @@
 	<div class="span8 offset1">
 		<form class="form-inline well" method="POST">
 			{{ form.hidden_tag() }}
-			{{ form.term(placeholder='Search for.. (regex accepted)', autocomplete="off") }}
+			{{ form.term(placeholder='Поиск.. (принято регулярное выражение)', autocomplete="off") }}
             {{ form.ignore_case() }} Ignore Case
-			<input type="submit" class="btn btn-success pull-right" value="Search!">
+			<input type="submit" class="btn btn-success pull-right" value="Искать!">
 		</form>
 	</div>
 </div>
@@ -28,7 +28,7 @@
 			{% endfor %}
 		</ul>
 	{% else %}
-		<p>No results for your search.</p>
+		<p>Нет результатов для вашего поиска.</p>
 	{% endif %}
 {% endif %}
 {% endblock content %}

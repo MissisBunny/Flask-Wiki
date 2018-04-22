@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Page Index{% endblock title %}
+{% block title %}Все статьи{% endblock title %}
 
 {% block content %}
 {% if pages %}
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Title</th>
+				<th>Заглавие</th>
 				<th>URL</th>
 			</tr>
 		</thead>
@@ -21,14 +21,14 @@
 		</tbody>
 	</table>
 {% else %}
-	<p>There are no pages yet.</p>
+	<p>Еще нет страниц.</p>
 {% endif %}
 {% endblock content %}
 
 {% block sidebar %}
 <ul class="nav nav-tabs nav-stacked">
-	<li><a href="{{ url_for('wiki.create') }}">New Page</a></li>
-	<li><a href="{{ url_for('wiki.tags') }}">Tag List</a></li>
-	<li><a href="{{ url_for('wiki.search') }}">Search</a></li>
+	<li><a href="{{ url_for('wiki.create') }}">Новая страница</a></li>
+	<li><a href="{{ url_for('wiki.tags') }}">Список тегов</a></li>
+	<li><a href="{{ url_for('wiki.search') }}">Искать</a></li>
 </ul>
 {% endblock sidebar %}

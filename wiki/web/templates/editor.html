@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title -%}
-Wiki Editor
+Wiki Редактор
 {%- endblock title %}
 
 {% block content %}
 <ul class="nav nav-tabs">
-	<li class="active"><a href="#editor" data-toggle="tab">Editor</a></li>
-	<li><a href="#preview" data-toggle="tab" id="previewlink">Preview</a></li>
+	<li class="active"><a href="#editor" data-toggle="tab">Редактор</a></li>
+	<li><a href="#preview" data-toggle="tab" id="previewlink">Предпросмотр</a></li>
 </ul>
 <div class="tab-content">
 	<div class="tab-pane active" id="editor">
@@ -18,11 +18,11 @@ Wiki Editor
 			{{ input(form.tags, placeholder="Tags (comma separated)", class="span7", autocomplete="off") }}
 			<div class="form-actions">
         <div class="pull-left">
-          <a class="btn" href="#preview" id="previewbtn">Preview</a>
+          <a class="btn" href="#preview" id="previewbtn">Предпросмотр</a>
         </div>
 				<div class="pull-right">
-          <a class="btn" href="{{ url_for('wiki.display', url=page.url) }}">Cancel</a>
-					<button class="btn btn-success" type="submit">Save</button>
+          <a class="btn" href="{{ url_for('wiki.display', url=page.url) }}">Отменить</a>
+					<button class="btn btn-success" type="submit">Сохранить</button>
 				</div>
 			</div>
 		</form>
@@ -32,8 +32,8 @@ Wiki Editor
 {% endblock content %}
 
 {% block sidebar %}
-<h3>Editor How-To</h3>
-<p>This editor is <a href="http://daringfireball.net/projects/markdown/">markdown</a> featured.</p>
+<h3>Быстрое How-To</h3>
+<p>Этото редактро имеет <a href="http://daringfireball.net/projects/markdown/">markdown</a> возможности.</p>
 <pre><code>* I
 * am
 * a
@@ -45,12 +45,12 @@ Turns into:
 <li>a</li>
 <li>list</li>
 </ul>
-<p><code>**bold** and *italics*</code> turn into <strong>bold</strong> and <em>italics</em>. Very easy!</p>
+<p><code>**bold** and *italics*</code> turn into <strong>bold</strong> and <em>italics</em>. Очень просто!</p>
 <p>Create links with <code>[NoTube](http://www.notube.com)</code>. They turn into <a href="http://www.notube.com">NoTube</a>.</p>
-<p>Headers are as follows:</p>
-<pre><code># Level 1
-## Level 2
-### Level 3</code></pre>
+<p>Заготовки следующие:</p>
+<pre><code># Заголовок 1
+## Заголовок 2
+### Заголовок 3</code></pre>
 <p></p>
 
 {% endblock sidebar %}

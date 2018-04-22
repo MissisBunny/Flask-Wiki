@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		 <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pygments.css') }}">
@@ -15,21 +16,21 @@
 						<div class="span12">
 							<a href="#" class="brand">{{ config.TITLE }}</a>
 							<ul class="nav">
-								<li><a href="{{ url_for('wiki.home') }}">Home</a></li>
-								<li><a href="{{ url_for('wiki.index') }}">Index</a></li>
-								<li><a href="{{ url_for('wiki.tags') }}">Tags</a></li>
-								<li><a href="{{ url_for('wiki.search') }}">Search</a></li>
+								<li><a href="{{ url_for('wiki.home') }}">Главная</a></li>
+								<li><a href="{{ url_for('wiki.index') }}">Статьи</a></li>
+								<li><a href="{{ url_for('wiki.tags') }}">Теги</a></li>
+								<li><a href="{{ url_for('wiki.search') }}">Поиск</a></li>
 								<li class="divider-vertical"></li>
-								<li><a href="{{ url_for('wiki.create') }}">New Page</a></li>
+								<li><a href="{{ url_for('wiki.create') }}">Новая страница</a></li>
 								<li class="divider-vertical"></li>
 								<li></li>
 							</ul>
 
 							<ul class="nav pull-right">
 								{% if current_user.is_anonymous %}
-									<li><a href="{{ url_for('wiki.user_login') }}">Login</a></li>
+									<li><a href="{{ url_for('wiki.user_login') }}">Авторизоваться</a></li>
 								{% else %}
-									<li><a href="{{ url_for('wiki.user_logout') }}">Logout</a></li>
+									<li><a href="{{ url_for('wiki.user_logout') }}">Выйти</a></li>
 								{% endif %}
 							</ul>
 						</div>
@@ -61,7 +62,7 @@
 						{% endif %}
 					{% endwith %}
 					{% if form and form.errors %}
-						<div class="alert alert-error">Errors occured verifying your input. Please check the marked fields below.</div>
+						<div class="alert alert-error">Произошли ошибки при проверке ввода. Пожалуйста, отметьте выбранные поля ниже.</div>
 					{% endif %}
 					{% block content %}
 					{% endblock content %}

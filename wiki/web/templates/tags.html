@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Index by Tags{% endblock title %}
+{% block title %}Тегированные страницы{% endblock title %}
 
 {% block content %}
 {% if tags %}
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Tag</th>
-				<th>Number of Articles</th>
+				<th>Тег</th>
+				<th>Количество статей</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,6 +21,6 @@
 		</tbody>
 	</table>
 {% else %}
-	<p>There are no tags in use so far.</p>
+	<p>Пока нет тегов.</p>
 {% endif %}
 {% endblock content %}

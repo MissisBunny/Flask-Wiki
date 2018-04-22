@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Create a new page{% endblock title %}
+{% block title %}Создать новую страницу{% endblock title %}
 {% block content %}
 <form method="POST" class="form-inline">
 	{{ form.hidden_tag() }}
-	{{ input(form.url, placeholder="URL of the new page", autocomplete="off") }}
-	<input type="submit" class="btn btn-success" value="Create">
+	{{ input(form.url, placeholder="URL новой страницы", autocomplete="off") }}
+	<input type="submit" class="btn btn-success" value="Создать">
 </form>
 {% endblock content %}
 
 {% block sidebar %}
-<p class="alert alert-success">Thank you for creating new content!</p>
+<p class="alert alert-success">Благодарим вас за создание нового контента!</p>
 {% endblock sidebar %}

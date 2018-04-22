@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Pages tagged {{ tag }}{% endblock title %}
+{% block title %}Тег страницы{{ tag }}{% endblock title %}
 
 {% block content %}
 {% if pages %}
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Title</th>
+				<th>Заглавие</th>
 				<th>URL</th>
 			</tr>
 		</thead>
@@ -21,6 +21,6 @@
 		</tbody>
 	</table>
 {% else %}
-	<p>There are no pages tagged {{ tag }}.</p>
+	<p>Нет страниц с тегами {{ tag }}.</p>
 {% endif %}
 {% endblock content %}
