@@ -13,9 +13,9 @@ Wiki Редактор
 	<div class="tab-pane active" id="editor">
 		<form method="post" class="form">
 			{{ form.hidden_tag() }}
-			{{ input(form.title, placeholder="Title", class="span7", autocomplete="off") }}
-			{{ input(form.body, placeholder="Markdown", class="span7", rows="20") }}
-			{{ input(form.tags, placeholder="Tags (comma separated)", class="span7", autocomplete="off") }}
+			{{ input(form.title, placeholder="Заготовок", class="span10", autocomplete="off") }}
+			{{ input(form.body, placeholder="Markdown", class="span10", rows="20") }}
+			{{ input(form.tags, placeholder="Тег (разделяем запятой)", class="span10", autocomplete="off") }}
 			<div class="form-actions">
         <div class="pull-left">
           <a class="btn" href="#preview" id="previewbtn">Предпросмотр</a>
@@ -27,7 +27,8 @@ Wiki Редактор
 			</div>
 		</form>
 	</div>
-	<div class="tab-pane" id="preview"></div>
+	<div class="tab-pane " id="preview"></div>
+
 </div>
 {% endblock content %}
 

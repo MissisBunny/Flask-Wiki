@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span7 offset1">
+				<div class="span10 ">
 					{% with messages = get_flashed_messages(with_categories=True) %}
 						{% if messages %}
 							{% for category, message in messages %}
@@ -67,7 +67,7 @@
 					{% block content %}
 					{% endblock content %}
 				</div>
-				<div class="span3">
+				<div class="span2">
 					{% block sidebar %}
 					{% endblock sidebar %}
 				</div>

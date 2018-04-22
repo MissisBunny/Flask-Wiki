@@ -2,7 +2,7 @@
 
 {% block title %}Создать новую страницу{% endblock title %}
 {% block content %}
-<form method="POST" class="form-inline">
+<form method="POST" class="form-inline offset1">
 	{{ form.hidden_tag() }}
 	{{ input(form.url, placeholder="URL новой страницы", autocomplete="off") }}
 	<input type="submit" class="btn btn-success" value="Создать">
