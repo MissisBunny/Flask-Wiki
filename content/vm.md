@@ -1,4 +1,4 @@
-title: РАьотаем с машинами OPEN VZ 
+title: Работаем с машинами OPEN VZ
 tags: 
 
 ```

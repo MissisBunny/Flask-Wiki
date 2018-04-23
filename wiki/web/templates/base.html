@@ -10,39 +10,54 @@
 	</head>
 
 	<body>
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<div class="row">
-						<div class="span12">
-							<a href="#" class="brand">{{ config.TITLE }}</a>
-							<ul class="nav">
-								<li><a href="{{ url_for('wiki.home') }}">Главная</a></li>
-								<li><a href="{{ url_for('wiki.index') }}">Статьи</a></li>
-								<li><a href="{{ url_for('wiki.tags') }}">Теги</a></li>
-								<li><a href="{{ url_for('wiki.search') }}">Поиск</a></li>
-								<li class="divider-vertical"></li>
-								<li><a href="{{ url_for('wiki.create') }}">Новая страница</a></li>
-								<li class="divider-vertical"></li>
-								<li></li>
-							</ul>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		    <a class="navbar-brand" href="#">Wiki</a>
+		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{ url_for('wiki.home') }}">Главная <span class="sr-only">(current)</span></a>
+		      </li>
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('wiki.index') }}">Статьи <span class="sr-only">(current)</span></a>
+					</li>
+		      <li class="nav-item">
+		         <a class="nav-link" href="{{ url_for('wiki.tags') }}">Теги <span class="sr-only">(current)</span></a>
+		      </li>
+					<li class="nav-item">
+						 <a class="nav-link" href="{{ url_for('wiki.create') }}">Новая страница <span class="sr-only">(current)</span></a>
+					</li>
+		      <li class="nav-item">
+		         <a class="nav-link" href="{{ url_for('wiki.search') }}">Поиск<span class="sr-only">(current)</span></a>
+		      </li>
+		    </ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+				</form>
 
-							<ul class="nav pull-right">
-								{% if current_user.is_anonymous %}
-									<li><a href="{{ url_for('wiki.user_login') }}">Авторизоваться</a></li>
-								{% else %}
-									<li><a href="{{ url_for('wiki.user_logout') }}">Выйти</a></li>
-								{% endif %}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+				<ul class="nav justify-content-end">
+					{% if current_user.is_anonymous %}
+					<li class="nav-item">
+						 <a class="nav-link" href="{{ url_for('wiki.user_login') }}">Авторизоваться <span class="sr-only">(current)</span></a>
+					</li>
+					{% else %}
+					<li class="nav-item">
+						 <a class="nav-link" href="{{ url_for('wiki.user_logout') }}">Выйти<span class="sr-only">(current)</span></a>
+					</li>
+					{% endif %}
+				</ul>
+
+
+		  </div>
+		</nav>
+
 
 		<div class="container">
 			<div class="row">
-				<div class="span10 offset1">
+				<div class="col-10 offset1 w-100 p-4">
 					{% block header %}
 						<div class="page-header">
 							<h1>{% block title %}{{ page.title }}{% endblock title %}</h1>
@@ -51,7 +66,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span10 ">
+				<div class="col-10 ">
 					{% with messages = get_flashed_messages(with_categories=True) %}
 						{% if messages %}
 							{% for category, message in messages %}
@@ -68,7 +83,7 @@
 					{% block content %}
 					{% endblock content %}
 				</div>
-				<div class="span2">
+				<div class="col-2">
 					{% block sidebar %}
 					{% endblock sidebar %}
 				</div>

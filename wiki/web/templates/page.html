@@ -29,10 +29,13 @@
       {% endfor %}
   </ul>
 {% endif %}
+
+
 <h3>Действие</h3>
-<ul class="nav nav-tabs nav-stacked">
-	<li><a href="{{ url_for('wiki.edit', url=page.url) }}">Изменить</a></li>
-  <li><a href="{{ url_for('wiki.move', url=page.url) }}">Больше</a></li>
-  <li><a href="#confirmDelete" data-toggle="modal" class="text-error">Удалить</a></li>
+<ul class="nav nav-pills ">
+
+	<li><a  class="nav-link active" href="{{ url_for('wiki.edit', url=page.url) }}">Изменить</a></li>
+  <li><a  class="nav-link active" href="{{ url_for('wiki.move', url=page.url) }}">Перенести</a></li>
+  <li><a  class="nav-link active" href="#confirmDelete" data-toggle="modal" class="text-error">Удалить</a></li>
 </ul>
 {% endblock sidebar %}

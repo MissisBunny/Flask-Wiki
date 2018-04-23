@@ -5,6 +5,35 @@ Wiki Редактор
 {%- endblock title %}
 
 {% block content %}
+
+<div class="card ">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+			<a href="#editor"  class="nav-link active">Редактор</a>
+      </li>
+      <li class="nav-item">
+		    <a href="#preview" class="nav-link" id="previewlink">Предпросмотр</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body" id="editor">
+		<form method="post" class="form">
+			{{ form.hidden_tag() }}
+			{{ input(form.title, placeholder="Заготовок", class="col-12", autocomplete="off") }}
+			{{ input(form.body, placeholder="Markdown", class="col-12", rows="20") }}
+			{{ input(form.tags, placeholder="Тег (разделяем запятой)", class="col-12", autocomplete="off") }}
+
+  </div>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary">Left</button>
+  <button type="button" class="btn btn-secondary">Middle</button>
+  <button type="button" class="btn btn-secondary">Right</button>
+</div>
+
+
+
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#editor" data-toggle="tab">Редактор</a></li>
 	<li><a href="#preview" data-toggle="tab" id="previewlink">Предпросмотр</a></li>
@@ -13,9 +42,9 @@ Wiki Редактор
 	<div class="tab-pane active" id="editor">
 		<form method="post" class="form">
 			{{ form.hidden_tag() }}
-			{{ input(form.title, placeholder="Заготовок", class="span10", autocomplete="off") }}
-			{{ input(form.body, placeholder="Markdown", class="span10", rows="20") }}
-			{{ input(form.tags, placeholder="Тег (разделяем запятой)", class="span10", autocomplete="off") }}
+			{{ input(form.title, placeholder="Заготовок", class="col-10", autocomplete="off") }}
+			{{ input(form.body, placeholder="Markdown", class="col-10", rows="20") }}
+			{{ input(form.tags, placeholder="Тег (разделяем запятой)", class="col-10", autocomplete="off") }}
 			<div class="form-actions">
         <div class="pull-left">
           <a class="btn" href="#preview" id="previewbtn">Предпросмотр</a>
