@@ -10,12 +10,12 @@
 
 {% block content %}
 <div class="row">
-	<div class="span10 offset1">
+	<div class="col-10 offset1">
 		<form class="form-inline well" method="POST">
 			{{ form.hidden_tag() }}
-			{{ form.term(placeholder='Поиск.. (принято регулярное выражение)', autocomplete="off", class= "span4") }}
-            {{ form.ignore_case() }} Ignore Case
-			<input type="submit" class="btn btn-success pull-right" value="Искать!">
+			{{ form.term(placeholder='Поиск.. (принято регулярное выражение)', autocomplete="off", class= "col-5") }}
+            {{ form.ignore_case( class="form-check-input col-1" ) }} <span class="col-2">Ignore Case</span>
+			<input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Искать!">
 		</form>
 	</div>
 </div>

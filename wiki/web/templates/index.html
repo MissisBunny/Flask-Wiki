@@ -4,8 +4,8 @@
 
 {% block content %}
 {% if pages %}
-	<table class="table">
-		<thead>
+  <table class="table table-bordered">
+	  <thead   class="thead-light">
 			<tr>
 				<th>Заглавие</th>
 				<th>URL</th>
@@ -26,9 +26,11 @@
 {% endblock content %}
 
 {% block sidebar %}
-<ul class="nav nav-tabs nav-stacked">
-	<li><a href="{{ url_for('wiki.create') }}">Новая страница</a></li>
-	<li><a href="{{ url_for('wiki.tags') }}">Список тегов</a></li>
-	<li><a href="{{ url_for('wiki.search') }}">Искать</a></li>
-</ul>
+<div class="btn-group-vertical">
+
+<a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('wiki.create') }}">Новая страница</a>
+<a class="btn btn-outline-success my-2 my-sm-0"href="{{ url_for('wiki.tags') }}">Список тегов</a>
+<a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('wiki.search') }}">Искать</a>
+
+</div>
 {% endblock sidebar %}

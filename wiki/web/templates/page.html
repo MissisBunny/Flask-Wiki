@@ -32,10 +32,10 @@
 
 
 <h3>Действие</h3>
-<ul class="nav nav-pills ">
+<div class="btn-group-vertical">
 
-	<li><a  class="nav-link active" href="{{ url_for('wiki.edit', url=page.url) }}">Изменить</a></li>
-  <li><a  class="nav-link active" href="{{ url_for('wiki.move', url=page.url) }}">Перенести</a></li>
-  <li><a  class="nav-link active" href="#confirmDelete" data-toggle="modal" class="text-error">Удалить</a></li>
-</ul>
+<a  class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('wiki.edit', url=page.url) }}">Изменить</a>
+<a  class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('wiki.move', url=page.url) }}">Перенести</a>
+<a  class="btn btn-outline-success my-2 my-sm-0" href="#confirmDelete" data-toggle="modal" class="text-error">Удалить</a>
+</div>
 {% endblock sidebar %}

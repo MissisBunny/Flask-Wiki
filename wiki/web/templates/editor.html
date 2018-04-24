@@ -4,64 +4,50 @@
 Wiki Редактор
 {%- endblock title %}
 
+
+
 {% block content %}
 
-<div class="card ">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-			<a href="#editor"  class="nav-link active">Редактор</a>
-      </li>
-      <li class="nav-item">
-		    <a href="#preview" class="nav-link" id="previewlink">Предпросмотр</a>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body" id="editor">
-		<form method="post" class="form">
-			{{ form.hidden_tag() }}
-			{{ input(form.title, placeholder="Заготовок", class="col-12", autocomplete="off") }}
-			{{ input(form.body, placeholder="Markdown", class="col-12", rows="20") }}
-			{{ input(form.tags, placeholder="Тег (разделяем запятой)", class="col-12", autocomplete="off") }}
 
-  </div>
-</div>
-<div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-primary">Left</button>
-  <button type="button" class="btn btn-secondary">Middle</button>
-  <button type="button" class="btn btn-secondary">Right</button>
-</div>
-
-
-
-<ul class="nav nav-tabs">
-	<li class="active"><a href="#editor" data-toggle="tab">Редактор</a></li>
-	<li><a href="#preview" data-toggle="tab" id="previewlink">Предпросмотр</a></li>
+<div col-10>
+<ul class="nav nav-tabs"  role="tablist">
+  <li class="nav-item">
+    <a href="#editor"  class="nav-link active" data-toggle="tab"  role="tab"  aria-selected="true">Редактор</a>
+  </li>
+  <li class="nav-item">
+    <a href="#preview" class="nav-link" id="previewlink" data-toggle="tab" role="tab"  aria-selected="false">Предпросмотр</a>
+  </li>
 </ul>
-<div class="tab-content">
-	<div class="tab-pane active" id="editor">
-		<form method="post" class="form">
-			{{ form.hidden_tag() }}
-			{{ input(form.title, placeholder="Заготовок", class="col-10", autocomplete="off") }}
-			{{ input(form.body, placeholder="Markdown", class="col-10", rows="20") }}
-			{{ input(form.tags, placeholder="Тег (разделяем запятой)", class="col-10", autocomplete="off") }}
-			<div class="form-actions">
-        <div class="pull-left">
-          <a class="btn" href="#preview" id="previewbtn">Предпросмотр</a>
-        </div>
-				<div class="pull-right">
-          <a class="btn" href="{{ url_for('wiki.display', url=page.url) }}">Отменить</a>
-					<button class="btn btn-success" type="submit">Сохранить</button>
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="tab-pane " id="preview"></div>
+<div class="tab-content col-12">
+<div  class="tab-pane fade show active" id="editor">
+  <form method="post" class="form">
+    {{ form.hidden_tag() }}
+    {{ input(form.title, placeholder="Заготовок", class="col-12", autocomplete="off") }}
+    {{ input(form.body, placeholder="Markdown", class="col-12", rows="20") }}
+    {{ input(form.tags, placeholder="Тег (разделяем запятой)", class="col-12", autocomplete="off") }}
 
+    <div class="form-actions w-100 p-2">
+        <div class="float-left">
+        <a class="btn btn-outline-success my-2 my-sm-0" href="#preview" id="previewbtn">Предпросмотр</a>
+        </div>
+        <div class="pull-right btn-group float-right" role="group"  aria-label="Basic example">
+        <a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('wiki.display', url=page.url) }}">Отменить</a>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Сохранить</button>
+        </div>
+      </div>
+    </form>
+  </div>
+<div class="tab-pane fade" id="preview"></div>
 </div>
+</div>
+
 {% endblock content %}
 
 {% block sidebar %}
+
+
+
+<div col-2>
 <h3>Быстрое How-To</h3>
 <p>Этото редактро имеет <a href="http://daringfireball.net/projects/markdown/">markdown</a> возможности.</p>
 <pre><code>* I
@@ -82,7 +68,7 @@ Turns into:
 ## Заголовок 2
 ### Заголовок 3</code></pre>
 <p></p>
-
+</div>
 {% endblock sidebar %}
 
 {% block postscripts -%}
